@@ -105,7 +105,5 @@ app.get('/posts/:postId', (req, res) => {
     
 });
 
-
-app.listen(process.env.PORT || 3000 , function() {
-  console.log("Server started on port 3000");
-});
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
