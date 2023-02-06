@@ -9,7 +9,7 @@ mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://Subhodip23:Subhodip%4010@firstcluster0.n974yek.mongodb.net/blogsdb?retryWrites=true&w=majority");
 console.log("connected to the server");
 
-const PORT = process.env.PORT || 4000;
+
 
 
 // let posts =[];
@@ -110,4 +110,4 @@ app.get('/posts/:postId', (req, res) => {
 
 
 http.createServer();
-app.listen(PORT);
+app.listen(process.env.PORT);
