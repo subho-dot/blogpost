@@ -9,6 +9,9 @@ mongoose.set("strictQuery", false);
 mongoose.connect("mongodb+srv://Subhodip23:Subhodip%4010@firstcluster0.n974yek.mongodb.net/blogsdb?retryWrites=true&w=majority");
 console.log("connected to the server");
 
+const PORT = process.env.PORT || 4000;
+
+
 // let posts =[];
 
 const blogschema = new mongoose.Schema({
@@ -22,7 +25,7 @@ const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pelle
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
-
+var http = require("http");
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -105,5 +108,6 @@ app.get('/posts/:postId', (req, res) => {
     
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+http.createServer();
+app.listen(PORT);
